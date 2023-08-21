@@ -104,16 +104,16 @@ def main():
         col3, col4 = st.columns([3, 7])
 
         with col3:
-            st.subheader("Podcast Guest")
-
             if "podcast_guest" in podcast_info.keys():
+                st.subheader("Podcast Guest")
+                
                 for i, j in podcast_info['podcast_guest']:
                     st.write(f"{i}: {j}")
 
         with col4:
-            st.subheader("Podcast Guest Details")
-
             if "podcast_guest" in podcast_info.keys():
+                st.subheader("Podcast Guest Details")
+                
                 details = ""
 
                 for i in [j for j in podcast_info['podcast_guest'].keys()]:
