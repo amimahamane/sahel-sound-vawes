@@ -46,18 +46,19 @@ def main():
 
             for i in [j for j in podcast_info['podcast_guest'].keys()]:
                 names += i
+                names += "\n\n"
 
             st.write(names)
 
         with col4:
             st.subheader("Podcast Guest Details")
-            
+
             details = ""
 
             for i in [j for j in podcast_info['podcast_guest'].keys()]:
                 details += podcast_info['podcast_guest'][i]
                 details += "\n\n"
-                
+
             st.write(details)
 
         # Display the five key moments
@@ -108,7 +109,13 @@ def main():
         with col4:
             st.subheader("Podcast Guest Details")
             
-            st.write(podcast_info["podcast_guest"]['summary'])
+            details = ""
+
+            for i in [j for j in podcast_info['podcast_guest'].keys()]:
+                details += podcast_info['podcast_guest'][i]
+                details += "\n\n"
+            
+            st.write(details)
 
         # Display the five key moments
         st.subheader("Key Moments")
