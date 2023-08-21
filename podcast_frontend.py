@@ -44,22 +44,24 @@ def main():
             st.subheader("Podcast Guest")
             names = ""
 
-            for i in [j for j in podcast_info['podcast_guest'].keys()]:
-                names += i
-                names += "\n\n"
+            if "podcast_guest" in podcast_info.keys():
+                for i in [j for j in podcast_info['podcast_guest'].keys()]:
+                    names += i
+                    names += "\n\n"
 
-            st.write(names)
+                st.write(names)
 
         with col4:
             st.subheader("Podcast Guest Details")
 
-            details = ""
+            if "podcast_guest" in podcast_info.keys():
+                details = ""
 
-            for i in [j for j in podcast_info['podcast_guest'].keys()]:
-                details += podcast_info['podcast_guest'][i]
-                details += "\n\n"
+                for i in [j for j in podcast_info['podcast_guest'].keys()]:
+                    details += podcast_info['podcast_guest'][i]
+                    details += "\n\n"
 
-            st.write(details)
+                st.write(details)
 
         # Display the five key moments
         st.subheader("Key Moments")
@@ -103,19 +105,22 @@ def main():
 
         with col3:
             st.subheader("Podcast Guest")
-            for i, j in podcast_info['podcast_guest']:
-                st.write(f"{i}: {j}")
+
+            if "podcast_guest" in podcast_info.keys():
+                for i, j in podcast_info['podcast_guest']:
+                    st.write(f"{i}: {j}")
 
         with col4:
             st.subheader("Podcast Guest Details")
-            
-            details = ""
 
-            for i in [j for j in podcast_info['podcast_guest'].keys()]:
-                details += podcast_info['podcast_guest'][i]
-                details += "\n\n"
-            
-            st.write(details)
+            if "podcast_guest" in podcast_info.keys():
+                details = ""
+
+                for i in [j for j in podcast_info['podcast_guest'].keys()]:
+                    details += podcast_info['podcast_guest'][i]
+                    details += "\n\n"
+
+                st.write(details)
 
         # Display the five key moments
         st.subheader("Key Moments")
